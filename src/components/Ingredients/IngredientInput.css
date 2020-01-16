@@ -1,0 +1,89 @@
+input {
+  background-color: rgb(250, 246, 219);
+}
+
+label {
+  margin-bottom: 3px;
+}
+
+.basic-input,
+.basic-label {
+  width: 90%;
+}
+
+.ingredient-input button {
+  background-color: rgb(250, 246, 219);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  width: 2.3rem;
+}
+
+button,
+input,
+label {
+  border: none;
+  border-radius: 3px;
+  font-family: "Work Sans", sans-serif;
+  outline: none;
+  display: block;
+  margin: 15px auto;
+  padding: 5px;
+}
+
+.qty-input-section {
+  margin: auto;
+  width: 90%;
+}
+
+.qty-input {
+  display: inline-block;
+  text-align: center;
+  margin: 15px;
+  width: 20px;
+}
+
+.qty-label-section {
+  margin: auto;
+  width: 90%;
+}
+
+.qty-label {
+  display: inline-block;
+  margin-right: 30px;
+  width: 30%;
+}
+
+.checkbox-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 0px;
+}
+
+#fraction-check {
+  display: inline-block;
+}
+
+.group {
+  display: inline-block;
+}
+
+.qty-input-whole {
+  margin-left: 0px;
+  width: 40px;
+}
+
+.input-add-button {
+  display: inline-block;
+  margin-right: 32%;
+}
+
+.input-exit-button {
+  display: inline-block;
+  margin-left: 32%;
+}
+
+.buttons {
+  margin: auto;
+  width: 90%;
+}

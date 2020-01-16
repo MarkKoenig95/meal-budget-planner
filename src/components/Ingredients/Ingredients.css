@@ -1,0 +1,46 @@
+.main-input {
+  background-color: #e6f1b5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 90%;
+  float: none;
+  width: 90%;
+}
+
+.ingredient {
+  background-color: #e6f1b5;
+  border-radius: 10px;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  min-width: 15rem;
+  width: auto;
+}
+
+.ingredient strong,
+.ingredient p {
+  display: block;
+  margin: 15px;
+}
+
+.ingredient-display button {
+  background-color: #00000000;
+  margin: 15px;
+  color: gray;
+}
+
+.edit-button {
+  float: right;
+}
+
+.delete-button {
+  float: left;
+}
+
+@media (min-width: 980px) {
+  .main-input {
+    width: 30%;
+    float: left;
+  }
+}

@@ -3,19 +3,41 @@ import axios from "axios";
 import IngredientInput from "./IngredientInput";
 import Ingredient from "./Ingredient";
 import "./Ingredients.css";
+const emptyIngredient = {
+  name: "",
+  cost: "",
+  unit: "",
+  location: ""
+};
 
 function Ingredients() {
   const [ingredients, setIngredients] = useState([]);
-  useEffect(() => {
+
+  useEffect(getIngredients, []);
+
+  function getIngredients() {
     axios.get("/ingredients").then(response => {
       setIngredients(response.data);
     });
-  });
+  }
+
   return (
     <div className="ingredients">
-      <IngredientInput />
+      <div className="main-input">
+        <IngredientInput
+          refresh={getIngredients}
+          ingredient={emptyIngredient}
+          edit={false}
+        />
+      </div>
       {ingredients.map(ingredient => {
-        return <Ingredient key={ingredient._id} ingredient={ingredient} />;
+        return (
+          <Ingredient
+            key={ingredient._id}
+            ingredient={ingredient}
+            refresh={getIngredients}
+          />
+        );
       })}
     </div>
   );

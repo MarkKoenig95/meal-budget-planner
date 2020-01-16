@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
-import Ingredients from "./Ingredients";
+import Ingredients from "./Ingredients/Ingredients";
 
 function App() {
   return (
