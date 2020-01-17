@@ -5,8 +5,10 @@ var databaseName = "mealDB";
 var globalMongoURL = `mongodb+srv://admin-mark:${process.env.PASSWORD}@cluster0-sdkut.mongodb.net/${databaseName}`;
 var localMongoURL = `mongodb://localhost:27017/${databaseName}`;
 
+var mongoURL = process.env.PRODUCTION ? globalMongoURL : localMongoURL;
+
 mongoose
-  .connect(localMongoURL, {
+  .connect(mongoURL, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
