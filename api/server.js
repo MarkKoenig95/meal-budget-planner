@@ -9,13 +9,12 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.static(path.join(__dirname, "..", "build")));
 
 ///////////////////////////////////////// Routes /////////////////////////////////////////
 
-app.use("/", routes);
-app.use("/ingredients", ingredients);
+app.use("/api/ingredients", ingredients);
+app.use("*", routes);
 
 ///////////////////////////////////////// Listen /////////////////////////////////////////
 

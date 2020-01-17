@@ -7,7 +7,7 @@ function IngredientDisplay(props) {
     let id = props.ingredient._id;
 
     axios
-      .delete("/ingredients/" + id)
+      .delete("/api/ingredients/" + id)
       .catch(error => {
         console.log(error);
       })

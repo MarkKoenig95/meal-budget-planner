@@ -16,9 +16,16 @@ function Ingredients() {
   useEffect(getIngredients, []);
 
   function getIngredients() {
-    axios.get("/ingredients").then(response => {
-      setIngredients(response.data);
-    });
+    axios
+      .get("/api/ingredients")
+      .then(response => {
+        console.log(response.data);
+
+        setIngredients(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   return (

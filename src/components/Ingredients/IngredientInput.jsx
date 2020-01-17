@@ -25,7 +25,7 @@ function IngredientInput(props) {
 
   useEffect(() => {
     function addIngredient() {
-      axios.post("/ingredients", ingredient).then(() => {
+      axios.post("/api/ingredients", ingredient).then(() => {
         props.refresh();
         setIngredient(emptyIngredient);
       });
@@ -33,7 +33,7 @@ function IngredientInput(props) {
 
     function editIngredient() {
       let id = props.ingredient._id;
-      axios.patch("/ingredients/" + id, ingredient).then(() => {
+      axios.patch("/api/ingredients/" + id, ingredient).then(() => {
         props.refresh();
         props.onExitClicked();
       });
