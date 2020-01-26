@@ -5,7 +5,7 @@ var databaseName = "mealDB";
 var globalMongoURL = `mongodb+srv://admin-mark:${process.env.PASSWORD}@cluster0-sdkut.mongodb.net/${databaseName}`;
 var localMongoURL = `mongodb://localhost:27017/${databaseName}`;
 
-var mongoURL = process.env.PRODUCTION ? globalMongoURL : localMongoURL;
+var mongoURL = process.env.NODE_ENV ? globalMongoURL : localMongoURL;
 
 mongoose
   .connect(mongoURL, {
@@ -27,7 +27,15 @@ const ingredientSchema = new mongoose.Schema({
 
 const Ingredient = new mongoose.model("Ingredient", ingredientSchema);
 
+const userSchema = new mongoose.Schema({
+  username: String,
+  ingredients: [ingredientSchema]
+});
+
+const User = new mongoose.model("User", userSchema);
+
 module.exports = {
   database: mongoose,
-  Ingredient: Ingredient
+  Ingredient: Ingredient,
+  User: User
 };
